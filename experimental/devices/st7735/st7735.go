@@ -68,42 +68,42 @@ type Model interface {
 	OffsetYEnd() byte
 }
 
-type ModelStandard struct {
+type ModelST7735 struct {
 }
 
-func (mm ModelStandard) OffsetX() byte {
+func (m ModelST7735) OffsetX() byte {
 	return 0
 }
 
-func (mm ModelStandard) OffsetXEnd() byte {
+func (m ModelST7735) OffsetXEnd() byte {
 	return width - 1
 }
 
-func (mm ModelStandard) OffsetY() byte {
+func (m ModelST7735) OffsetY() byte {
 	return 0
 }
 
-func (mm ModelStandard) OffsetYEnd() byte {
+func (m ModelST7735) OffsetYEnd() byte {
 	return height - 1
 }
 
-type ModelMini struct {
+type ModelST7735S struct {
 }
 
-func (mm ModelMini) OffsetY() byte {
+func (m ModelST7735S) OffsetY() byte {
 	return (width - 160) / 2
 }
 
-func (mm ModelMini) OffsetYEnd() byte {
-	return (160 + mm.OffsetY()) - 1
+func (m ModelST7735S) OffsetYEnd() byte {
+	return (160 + m.OffsetY()) - 1
 }
 
-func (mm ModelMini) OffsetX() byte {
+func (m ModelST7735S) OffsetX() byte {
 	return (height - 80) / 2
 }
 
-func (mm ModelMini) OffsetXEnd() byte {
-	return (80 + mm.OffsetX()) - 1
+func (m ModelST7735S) OffsetXEnd() byte {
+	return (80 + m.OffsetX()) - 1
 }
 
 type Command struct {
